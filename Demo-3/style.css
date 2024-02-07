@@ -1,0 +1,117 @@
+.hero-background {
+    position: relative;
+    background-image: url('./handshake.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-background:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(67, 203, 131, 0.7);
+    z-index: 0;
+}
+
+.hero-background .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-background button {
+    background-color: #ffffff;
+    color: #000;
+    border-color: #43CB83;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-item {
+    padding-left: 1rem
+}
+
+.about-image {
+    max-width: 500px;
+    width: 100%;
+}
+
+#testimonialCarousel img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    object-position: center;
+}
+
+#testimonialCarousel .carousel-item .row {
+    padding: 0 2rem;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    filter: invert(100%);
+    width: 2rem;
+}
+
+.subscribe .form-control {
+    height: calc(1.5em + .75rem + 2px);
+    border-radius: .25rem;
+    background-color: inherit;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+
+.subscribe .btn-success {
+    height: calc(1.5em + .75rem + 2px);
+    border-radius: .25rem;
+    background-color: #ffffff;
+    border-color: #28a745;
+    color: #28a745;
+}
+
+.subscribe .btn-success:hover {
+    background-color: #28a745;
+    border-color: #0002;
+    color: #ffffff;
+}
+
+#email-id::placeholder {
+    color: #ffffff;
+}
+
+@media (max-width: 991px) {
+    .navbar-brand h5 {
+        font-size: 1rem;
+    }
+
+    .nav-item .nav-link {
+        font-size: 0.8rem;
+    }
+
+    #testimonialCarousel img {
+        height: 80px;
+        width: 80px;
+    }
+
+    .carousel-control-next,
+    .carousel-control-prev {
+        width: 1rem;
+    }
+
+    #testimonialCarousel .carousel-item .row {
+        padding: 0 1.2rem;
+        font-size: 0.8rem;
+    }
+
+}
