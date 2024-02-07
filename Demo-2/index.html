@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --text-color: #333;
+            --background-color: #f4f4f4;
+            --header-footer-bg-color: #282c34;
+            --secondary-color: #6c757d;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        header,
+        footer {
+            padding: 20px;
+            background-color: var(--header-footer-bg-color);
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        h1 {
+            margin: 0 auto;
+        }
+
+        #logout {
+            cursor: pointer;
+            margin: auto 0;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .projects {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .project-item {
+            background: #fff;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+        }
+
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-content {
+            padding: 15px;
+        }
+
+        .project-title a {
+            font-size: 20px;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .project-title a:hover,
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+
+        .project-description {
+            color: var(--secondary-color);
+            margin: 10px 0;
+        }
+
+        .project-links a {
+            margin-right: 15px;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .project-content {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content-wrapper">
+        <header>
+            <h1>Dashboard</h1>
+            <a id="logout">Logout</a>
+        </header>
+        <main>
+            <section class="projects">
+                <h2>Pages</h2>
+                <div class="project-item">
+                    <div class="project-content">
+                        <div class="project-title"><a href="/Demo-1/index.html" target="_blank">News Portal -
+                                CSS Flex box</a>
+                        </div>
+                        <div class="project-description">
+                            News Portal is a simple website that uses CSS Flexbox to create a responsive layout. It
+                            fetchs news from an News API and displays it on the website.
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/hppanpaliya/Front-End-Practice/tree/main/Demo-1"
+                                target="_blank">GitHub</a>
+                            <a href="/Demo-1/index.html">Visit</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-content">
+                        <div class="project-title"><a href="/Demo-2/carousel.html" target="_blank">Unsplash API -
+                                Bootstrap Carousel</a>
+                        </div>
+                        <div class="project-description">
+                            Unsplash API is a simple website that uses Bootstrap Carousel to display images fetched from
+                            Unsplash API. It uses JavaScript to fetch images from the API and display it on the website.
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/hppanpaliya/Front-End-Practice/tree/main/Demo-2"
+                                target="_blank">GitHub</a>
+                            <a href="/Demo-2/carousel.html">Visit</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-content">
+                        <div class="project-title"><a href="/Demo-3/index.html" target="_blank">Bootstrap
+                                Business
+                                Page Design - Bootstrap 5</a>
+                        </div>
+                        <div class="project-description">
+                            Crafted a responsive business landing page using Bootstrap, featuring a
+                            clean navigation bar, engaging hero section, product showcases with icons, about us area,
+                            and a newsletter subscription form.
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/hppanpaliya/Front-End-Practice/tree/main/Demo-3"
+                                target="_blank">GitHub</a>
+                            <a href="/Demo-3/index.html">Visit</a>
+                        </div>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 Harshal Panpaliya</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('logout').addEventListener('click', function () {
+            localStorage.removeItem('isAuthenticated');
+            sessionStorage.removeItem('isAuthenticated');
+
+            window.location.href = 'login.html';
+        });
+        $(document).ready(function () {
+            if (!localStorage.getItem('isAuthenticated') && !sessionStorage.getItem('isAuthenticated')) {
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
+</body>
+
+</html>
