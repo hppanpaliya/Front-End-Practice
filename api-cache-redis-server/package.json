@@ -1,5 +1,5 @@
 {
-  "name": "newsapi-redis-server",
+  "name": "api-cache-redis-server",
   "version": "1.0.0",
   "description": "",
   "type": "module",

@@ -1,13 +1,14 @@
-# News API Redis Server
+# API Cache Redis Server
 
-This project is an Express server that fetches news data from the News API and caches responses using Redis to improve performance. 
-It serves static files from a `public` directory and dynamically fetches news based on the request URL parameters.
+This project is an Express server that fetches news data from the APIs and caches responses using Redis to improve performance, reduce the number of requests and secure the API key.
+It serves static files from a `public` directory.
 
 ## Prerequisites
 
 - Node.js
 - Redis server
 - News API key
+- Unsplash API key
 
 ## Setup
 
@@ -22,6 +23,7 @@ It serves static files from a `public` directory and dynamically fetches news ba
    REDIS_PASSWORD=<Your_Redis_Password>
    REDIS_HOST=<Your_Redis_Host>
    REDIS_PORT=<Your_Redis_Port>
+   UNSPLASH_ACCESS_KEY=<Your_UNSPLASH_ACCESS_KEY>
    ```
 4. Place your static files in the `public` directory.
 
@@ -37,4 +39,5 @@ The server will listen on port 4000 by default.
 
 ## Endpoints
 
-- **`GET /*`**: Fetches news based on the query parameters and path.
+- **`GET /unsplash`**: Queries the Unsplash API for images based on the query parameters.
+- **`GET /*`**: Queries the News API for news data based on the query parameters.
