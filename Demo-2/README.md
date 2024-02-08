@@ -4,6 +4,10 @@
 
 A web application featuring a signup and login system with validations using HTML5, CSS3, jQuery, and a dashboard showcasing HTML5 features, CSS flexbox, pseudo-classes, and a Bootstrap carousel.
 
+## Demo link
+
+[Login and Dashboard Application](https://projects.harshal.pro/Demo-2)
+
 ## Features
 
 - **Signup Page:** Allows new users to register.
